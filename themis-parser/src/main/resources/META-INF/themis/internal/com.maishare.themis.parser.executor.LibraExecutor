@@ -1,0 +1,2 @@
+adaptiveLibraExecutor=com.maishare.themis.parser.executor.AdaptiveLibraExecutor
+libraAntlrExecutor=com.maishare.themis.parser.executor.LibraAntlrExecutor

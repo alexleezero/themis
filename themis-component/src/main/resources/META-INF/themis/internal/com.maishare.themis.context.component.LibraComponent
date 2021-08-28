@@ -1,0 +1,17 @@
+checkDbComponent=com.maishare.themis.component.check.CheckDBComp
+checkYamlComp=com.maishare.themis.component.check.CheckYamlComp
+
+clearDBComp=com.maishare.themis.component.clear.ClearDBComp
+clearRedisComp=com.maishare.themis.component.clear.ClearRedisComp
+
+executeBeanComp=com.maishare.themis.component.execute.DefaultExecuteBeanComp
+springExecuteBeanComp=com.maishare.themis.component.execute.SpringExecuteBeanComp
+
+referenceComp=com.maishare.themis.component.freestyle.ReferenceComp
+
+mockYamlComp=com.maishare.themis.component.mock.MockYamlComp
+
+prepareDBComp=com.maishare.themis.component.prepare.PrepareDBComp
+prepareYamlComp=com.maishare.themis.component.prepare.PrepareYamlComp
+
+printConsoleComp=com.maishare.themis.component.print.PrintConsoleComp

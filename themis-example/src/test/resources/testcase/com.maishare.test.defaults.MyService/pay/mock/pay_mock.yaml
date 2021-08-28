@@ -1,0 +1,16 @@
+# mock数据
+index: 1
+data:
+  - bean: com.maishare.test.defaults.MyMockServiceImpl
+    hostBean: com.maishare.test.defaults.MyServiceImpl
+    method: getMoney
+    paramType:
+    return: !!org.bravo.gaia.commons.money.MultiCurrencyMoney
+      cent: 66666
+      currencyValue: 156
+
+
+
+
+
+

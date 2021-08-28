@@ -1,0 +1,3 @@
+adaptive=com.maishare.themis.extension.compiler.support.AdaptiveCompiler
+jdk=com.maishare.themis.extension.compiler.support.JdkCompiler
+javassist=com.maishare.themis.extension.compiler.support.JavassistCompiler

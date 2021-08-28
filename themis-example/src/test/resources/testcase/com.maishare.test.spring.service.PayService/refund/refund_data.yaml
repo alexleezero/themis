@@ -1,0 +1,28 @@
+data_case:
+  index: refund_case_1
+  desc: 正常退款
+  author: 王五
+  data:
+    reference_case: pay_case_1
+    check_db_file: refund_db_check.yaml
+    check_db_file_index: 1
+    clear_db_file: refund_db_clear.yaml
+    clear_db_file_index: 1
+    bean: com.maishare.themis.context.domain.Libra
+
+---
+
+
+data_case:
+  index: refund_case_2
+  desc: 异常退款
+  author: 赵六
+  data:
+    reference_case: pay_case_2
+    check_db_file: refund_db_check.yaml
+    check_db_file_index: 2
+    clear_db_file: refund_db_clear.yaml
+    clear_db_file_index: 2
+    bean: com.maishare.themis.context.domain.Libra
+
+

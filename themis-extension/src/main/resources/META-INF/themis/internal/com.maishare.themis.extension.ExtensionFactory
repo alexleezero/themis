@@ -1,0 +1,2 @@
+adaptive=com.maishare.themis.extension.factory.AdaptiveExtensionFactory
+spi=com.maishare.themis.extension.factory.SpiExtensionFactory

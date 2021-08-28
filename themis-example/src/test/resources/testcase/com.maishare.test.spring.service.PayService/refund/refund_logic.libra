@@ -1,0 +1,12 @@
+desc: "支付接口测试"
+author: "李健"
+maintainer: "李健"
+logic: {
+
+    libra:freestyle:reference($reference_case);
+
+    libra:check:db($check_db_file, $check_db_file_index);
+
+    @libra:clear:db($clear_db_file, $clear_db_file_index);
+
+}

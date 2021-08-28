@@ -1,0 +1,2 @@
+adaptiveLibraInstanceGenerator=com.maishare.themis.parser.generator.AdaptiveLibraInstanceGenerator
+yamlLibraInstanceGenerator=com.maishare.themis.parser.generator.YamlLibraInstanceGenerator

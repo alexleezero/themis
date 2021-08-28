@@ -1,0 +1,1 @@
+defaultAssertMatcherExecutor=com.maishare.themis.component.base.checker.DefaultAssertMatcherExecutor

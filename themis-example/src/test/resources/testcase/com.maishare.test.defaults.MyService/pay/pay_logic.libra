@@ -1,0 +1,9 @@
+desc: "支付"
+author: "牟绍坤"
+maintainer: "牟绍坤"
+logic: {
+    libra:prepare:yaml($prepare_yaml_file, $prepare_yaml_file_index);
+    libra:mock:yaml($mock_yaml_file, $mock_yaml_file_index);
+    libra:execute:class("com.maishare.test.defaults.MyServiceImpl", "pay");
+    libra:check:yaml($check_yaml_file, $check_yaml_file_index);
+}

@@ -1,0 +1,2 @@
+adaptiveRedisOperationBuilder=com.maishare.themis.component.base.db.builder.AdaptiveRedisOperationBuilder
+yamlRedisOperationBuilder=com.maishare.themis.component.base.db.builder.YamlRedisOperationBuilder

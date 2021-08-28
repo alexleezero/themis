@@ -1,0 +1,2 @@
+adaptiveLibraParser=com.maishare.themis.parser.AdaptiveLibraParser
+libraAntlrParser=com.maishare.themis.parser.LibraAntlrParser

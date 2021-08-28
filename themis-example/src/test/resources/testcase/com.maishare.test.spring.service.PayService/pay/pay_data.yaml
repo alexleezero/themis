@@ -1,0 +1,47 @@
+# 数据用例文件，一个data_case等于一个用例
+
+data_case:
+  index: pay_case_1
+  desc: 场景一
+  author: 张三
+  data:
+    prepare_yaml_file: pay_prepare.yaml
+    prepare_yaml_file_index: 1
+    mock_yaml_file: pay_mock.yaml
+    mock_yaml_file_index: 1
+    check_yaml_file: pay_check.yaml
+    check_yaml_file_index: 1
+    bean: com.maishare.test.spring.service.impl.PayServiceImpl
+    prepare_db_file: pay_db_prepare.yaml
+    prepare_db_file_index: 1
+    check_db_file: pay_db_check.yaml
+    check_db_file_index: 1
+    clear_db_file: pay_db_clear.yaml
+    clear_db_file_index: 1
+    clear_redis_file: pay_redis_clear.yaml
+    clear_redis_file_index: 1
+
+
+---
+data_case:
+  index: pay_case_2
+  desc: 场景二
+  author: 张三
+  data:
+    prepare_yaml_file: pay_prepare.yaml
+    prepare_yaml_file_index: 2
+    mock_yaml_file: pay_mock.yaml
+    mock_yaml_file_index: 2
+    check_yaml_file: pay_check.yaml
+    check_yaml_file_index: 2
+    bean: com.maishare.test.spring.service.impl.PayServiceImpl
+    prepare_db_file: pay_db_prepare.yaml
+    prepare_db_file_index: 2
+    check_db_file: pay_db_check.yaml
+    check_db_file_index: 2
+    clear_db_file: pay_db_clear.yaml
+    clear_db_file_index: 2
+    clear_redis_file: pay_redis_clear.yaml
+    clear_redis_file_index: 2
+
+

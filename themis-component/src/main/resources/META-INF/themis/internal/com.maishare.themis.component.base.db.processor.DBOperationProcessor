@@ -1,0 +1,5 @@
+adaptiveDBOperationProcessor=com.maishare.themis.component.base.db.processor.AdaptiveDBOperationProcessor
+selectOperationProcessor=com.maishare.themis.component.base.db.processor.DBSelectOperationProcessor
+deleteOperationProcessor=com.maishare.themis.component.base.db.processor.DBDeleteOperationProcessor
+updateOperationProcessor=com.maishare.themis.component.base.db.processor.DBUpdateOperationProcessor
+insertOperationProcessor=com.maishare.themis.component.base.db.processor.DBInsertOperationProcessor

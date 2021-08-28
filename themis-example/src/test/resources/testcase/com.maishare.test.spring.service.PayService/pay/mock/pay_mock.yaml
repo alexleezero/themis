@@ -1,0 +1,42 @@
+# mock数据
+index: 2
+data:
+  - bean: com.maishare.test.spring.service.UserService
+    hostBean: com.maishare.test.spring.service.PayService
+    method: findOneUser
+    param:
+      id: 1
+    return:
+      - !!com.maishare.test.spring.domain.UserInfo
+        id: 1
+        userName: zs
+        sex: 男
+      - !!com.maishare.test.spring.domain.UserInfo
+        id: 2
+        userName: ls
+        sex: 女
+  - bean: com.maishare.test.spring.service.UserService
+    hostBean: com.maishare.test.spring.service.PayService
+    method: notify
+    return: xx
+
+
+---
+# mock数据 根据参数类型匹配
+index: 1
+data:
+  bean: com.maishare.test.spring.service.UserService
+  hostBean: com.maishare.test.spring.service.PayService
+  method: findOneUser
+  paramType: java.lang.String
+  return:
+    - !!com.maishare.test.spring.domain.UserInfo
+      id: 1
+      userName: zs
+      sex: 男
+    - !!com.maishare.test.spring.domain.UserInfo
+      id: 2
+      userName: ls
+      sex: 女
+
+

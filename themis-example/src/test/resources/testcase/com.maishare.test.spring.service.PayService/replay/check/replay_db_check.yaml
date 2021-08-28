@@ -1,0 +1,101 @@
+# 检查db数据的参照对象
+# $returnValue可以从data文件或者方法调用的返回值取得
+
+index: 1
+data:
+  -
+    type: select
+    tableName: test_user
+    conditions:
+      age:
+        opt: less_than
+        value: 100
+      age2:
+        opt: less_equal
+        value: 100
+      age3:
+        opt: greater_than
+        value: 0
+      age4:
+        opt: greater_equal
+        value: 0
+      user_no:
+        opt: equal
+        value: moushaokun
+      user_name:
+        opt: not_equal
+        value: "张三"
+      address:
+        opt: like
+        value: 触手
+      address2:
+        opt: not_like
+        value: 触手
+      address3:
+        opt: left_like
+        value: 一切
+      address4:
+        opt: not_left_like
+        value: 遇见
+      address5:
+        opt: right_like
+        value: 而起。
+      address6:
+        opt: not_right_like
+        value: 而起
+      id:
+        opt: in
+        value: [1,2]
+      id2:
+        opt: not_in
+        value: ["3","4"]
+    comparisons:
+      -
+        address:
+          opt: left_like
+          value: "遇见"
+        user_no:
+          opt: equal
+          value: moushaokun
+        user_name:
+          opt: like
+          value: "牟绍坤"
+        age:
+          opt: less_than
+          value: 100
+        birthday:
+          opt: equal
+          value: 2020-03-03 12:00:00
+        online:
+          opt: equal
+          value: true
+        mobile_phone:
+          opt: equal
+          value: 13666269455
+        money:
+          opt: greater_than
+          value: 1
+        money2:
+          opt: equal
+          value: 100.5555
+        address:
+          opt: like
+          value: "遇见有很多种，有些触手可及、有些来无踪去无影。"
+
+---
+
+
+index: 2
+data:
+  -
+    type: select
+    tableName: test_user
+    conditions:
+      id:
+        opt: equal
+        value: 3
+    comparisons:
+      -
+        user_no:
+          opt: like
+          value: "an"

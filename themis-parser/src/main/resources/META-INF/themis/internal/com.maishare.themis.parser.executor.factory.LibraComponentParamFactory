@@ -1,0 +1,5 @@
+adaptiveLibraComponentParamFactory=com.maishare.themis.parser.executor.factory.AdaptiveLibraComponentParamFactory
+commonIndexCompParamFactory=com.maishare.themis.parser.executor.factory.CommonIndexCompParamFactory
+executeCompParamFactory=com.maishare.themis.parser.executor.factory.ExecuteCompParamFactory
+referenceCompParamFactory=com.maishare.themis.parser.executor.factory.ReferenceCompParamFactory
+printCompParamFactory=com.maishare.themis.parser.executor.factory.PrintCompParamFactory

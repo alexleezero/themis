@@ -1,0 +1,2 @@
+adaptiveDBOperationBuilder=com.maishare.themis.component.base.db.builder.AdaptiveDBOperationBuilder
+yamlDBOperationBuilder=com.maishare.themis.component.base.db.builder.YamlDBOperationBuilder

@@ -1,0 +1,11 @@
+data_case:
+  index: MyService_pay_data_case_1
+  desc: 支付
+  author: 牟绍坤
+  data:
+    prepare_yaml_file: pay_prepare.yaml
+    prepare_yaml_file_index: 1
+    mock_yaml_file: pay_mock.yaml
+    mock_yaml_file_index: 1
+    check_yaml_file: pay_check.yaml
+    check_yaml_file_index: 1

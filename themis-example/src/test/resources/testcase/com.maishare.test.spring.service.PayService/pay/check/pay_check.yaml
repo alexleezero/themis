@@ -1,0 +1,45 @@
+# 检查内存数据的参照对象
+index: 1
+data: !!org.bravo.gaia.commons.domain.BaseResult
+  success: true
+  resultObj:
+    - !!com.maishare.test.spring.domain.UserInfo
+      id: 1
+      userName: zs
+      sex: 男
+    - !!com.maishare.test.spring.domain.UserInfo
+      id: 2
+      userName: ls
+      sex: 女
+---
+index: 2
+data: !!org.bravo.gaia.commons.domain.BaseResult
+  success: true
+  resultObj:
+    - !!com.maishare.test.spring.domain.UserInfo
+      id: 1
+      userName: zs
+      sex: 男
+    - !!com.maishare.test.spring.domain.UserInfo
+      id: 2
+      userName: ls
+      sex: 女
+
+---
+index: 3
+data: 支付成功
+---
+index: 4
+data: 支付成功
+
+---
+index: 5
+data: !!org.bravo.gaia.commons.domain.BaseResult
+  success: true
+  resultObj: 支付成功
+
+---
+index: 6
+data: !!org.bravo.gaia.commons.domain.BaseResult
+  success: true
+  resultObj: 支付成功

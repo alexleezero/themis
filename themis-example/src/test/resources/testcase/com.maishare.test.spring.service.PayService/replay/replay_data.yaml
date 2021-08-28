@@ -1,0 +1,28 @@
+data_case:
+  index: replay_case_1
+  desc: 重试退款
+  author: 黄忠
+  data:
+    reference_case: refund_case_1
+    check_db_file: replay_db_check.yaml
+    check_db_file_index: 1
+    clear_db_file: replay_db_clear.yaml
+    clear_db_file_index: 1
+    bean: com.maishare.themis.context.domain.Libra
+
+---
+
+
+data_case:
+  index: replay_case_2
+  desc: 异常重试退款
+  author: 张飞
+  data:
+    reference_case: refund_case_2
+    check_db_file: replay_db_check.yaml
+    check_db_file_index: 2
+    clear_db_file: replay_db_clear.yaml
+    clear_db_file_index: 2
+    bean: com.maishare.themis.context.domain.Libra
+
+

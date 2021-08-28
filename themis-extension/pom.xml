@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>themis</artifactId>
+        <groupId>com.maishare</groupId>
+        <version>1.0-RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>themis-extension</artifactId>
+
+    <description>
+        themis SPI扩展、能力来自于dubbo中的extension
+    </description>
+
+    <properties>
+        <gaia-version>1.0.1-RELEASE</gaia-version>
+        <fastjson-version>1.2.62</fastjson-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bravo</groupId>
+            <artifactId>gaia-log</artifactId>
+            <version>${gaia-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bravo</groupId>
+            <artifactId>gaia-utils</artifactId>
+            <version>${gaia-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.26.0-GA</version>
+        </dependency>
+    </dependencies>
+
+</project>

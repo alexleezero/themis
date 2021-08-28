@@ -1,0 +1,36 @@
+# 清除db数据的参照对象
+# $returnValue可以从data文件或者方法调用的返回值取得
+# condition中的列是and关系
+
+index: 1
+data:
+  -
+    type: delete
+    tableName: test_user
+    conditions:
+      id:
+        opt: equal
+        value: 1
+  -
+    type: delete
+    tableName: test_user
+    conditions:
+      id:
+        opt: equal
+        value: 2
+    sets:
+      user_name: "黄月英"
+      mobile_phone: "22222222"
+
+---
+
+
+index: 2
+data:
+  -
+    type: delete
+    tableName: test_user
+    conditions:
+      id:
+        opt: equal
+        value: 3

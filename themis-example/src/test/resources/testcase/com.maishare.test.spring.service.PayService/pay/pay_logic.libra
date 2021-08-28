@@ -1,0 +1,48 @@
+desc: "支付接口测试"
+author: "李健"
+maintainer: "李健"
+logic: {
+    a = 100;
+
+    b = 2;
+
+    c = a + b;
+
+    libra:print:console(c);
+
+    libra:print:console(c + 1);
+
+    libra:print:console(c + "a" + 1*2);
+
+    libra:print:console(true);
+
+    if c != nil:
+        libra:print:console("nil可以用来表示空");
+    end
+
+    if c+1 == 100+1:
+        libra:prepare:db($prepare_db_file, $prepare_db_file_index);
+        @libra:print:console("语句块里面也可以使用@libra");
+    else:
+        libra:prepare:db($prepare_db_file, $prepare_db_file_index);
+        libra:prepare:yaml($prepare_yaml_file, $prepare_yaml_file_index);
+        libra:mock:yaml($mock_yaml_file, $mock_yaml_file_index);
+        libra:execute:bean("com.maishare.test.spring.service.PayService", "pay");
+        libra:check:yaml($check_yaml_file, $check_yaml_file_index);
+    end
+
+    d = $bean + "：我是字符串";
+
+    bean = "我是内部定义的值";
+
+    @libra:print:console(d + "||" + bean + "==" + $bean);
+
+    libra:check:db($check_db_file, $check_db_file_index);
+
+    @libra:clear:db($clear_db_file, $clear_db_file_index);
+
+    libra:clear:redis($clear_redis_file, $clear_redis_file_index);
+
+    libra:print:console("表演结束。。。");
+
+}

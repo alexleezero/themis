@@ -1,0 +1,4 @@
+json=com.maishare.themis.parser.processor.JsonTypeFileProcessor
+yaml=com.maishare.themis.parser.processor.YamlTypeFileProcessor
+libra=com.maishare.themis.parser.processor.LibraTypeFileProcessor
+adaptive=com.maishare.themis.parser.processor.AdaptiveTypeProcessor

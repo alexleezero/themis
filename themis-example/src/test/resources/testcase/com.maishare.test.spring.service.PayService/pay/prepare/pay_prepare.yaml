@@ -1,0 +1,19 @@
+# 为execute组件执行的方法准备的参数，execute组件的所有参数都在此文件声明
+
+index: 1
+data:
+  age: 35
+  userNames:
+    - 刘备
+    - 关羽
+    - 张飞
+    - 赵子龙
+---
+index: 2
+data:
+  age: 35
+  userNames:
+      - 刘备
+      - 关羽
+      - 张飞
+      - 赵子龙

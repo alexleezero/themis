@@ -1,0 +1,5 @@
+adaptiveDBOperationFactory=com.maishare.themis.component.base.db.factory.AdaptiveDBOperationFactory
+insertOperationFactory=com.maishare.themis.component.base.db.factory.DBInsertOperationFactory
+selectOperationFactory=com.maishare.themis.component.base.db.factory.DBSelectOperationFactory
+deleteOperationFactory=com.maishare.themis.component.base.db.factory.DBDeleteOperationFactory
+updateOperationFactory=com.maishare.themis.component.base.db.factory.DBUpdateOperationFactory

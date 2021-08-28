@@ -1,0 +1,5 @@
+comparableTypeAssertMatcher=com.maishare.themis.component.base.checker.ComparableTypeAssertMatcher
+arrayListAssertMatcher=com.maishare.themis.component.base.checker.ArrayListAssertMatcher
+mapAssertMatcher=com.maishare.themis.component.base.checker.MapAssertMatcher
+objectAssertMatcher=com.maishare.themis.component.base.checker.ObjectAssertMatcher
+
