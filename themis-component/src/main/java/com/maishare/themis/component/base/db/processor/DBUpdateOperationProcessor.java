@@ -10,7 +10,7 @@ import com.maishare.themis.component.base.db.operation.DBOperationType;
 import com.maishare.themis.component.base.db.operation.DBUpdateOperation;
 import com.maishare.themis.component.base.db.operation.OperationType;
 import org.apache.commons.collections.MapUtils;
-import org.bravo.gaia.commons.domain.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,9 +52,9 @@ public class DBUpdateOperationProcessor extends AbstractDBOperationProcessor<DBU
 
         sb.append(sets.substring(0, sets.length() - 1));
         sb.append(" where ");
-        sb.append(conditionStrAndParam.getFirst());
+        sb.append(conditionStrAndParam.getLeft());
 
-        setParams.addAll(conditionStrAndParam.getSecond());
+        setParams.addAll(conditionStrAndParam.getRight());
 
         return SqlExecutor.getInstance(
                 operation.getThemisTestExecution().getThemisContext().getThemisConfig().getDataSource())

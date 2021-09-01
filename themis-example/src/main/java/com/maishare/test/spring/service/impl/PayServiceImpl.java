@@ -8,7 +8,7 @@ import com.maishare.test.spring.AddAddressEvent;
 import com.maishare.test.spring.domain.UserInfo;
 import com.maishare.test.spring.service.PayService;
 import com.maishare.test.spring.service.UserService;
-import org.bravo.gaia.commons.domain.BaseResult;
+import com.oppo.gaia.commons.domain.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;

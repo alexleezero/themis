@@ -26,8 +26,8 @@ import com.maishare.themis.extension.utils.ConcurrentHashSet;
 import com.maishare.themis.extension.utils.Holder;
 import com.maishare.themis.extension.utils.ReflectUtils;
 import com.maishare.themis.extension.utils.StringUtils;
-import org.bravo.gaia.log.logger.Logger;
-import org.bravo.gaia.log.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

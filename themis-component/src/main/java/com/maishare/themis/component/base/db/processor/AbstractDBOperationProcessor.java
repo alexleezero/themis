@@ -8,11 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.bravo.gaia.commons.domain.Pair;
-
 import com.maishare.themis.component.base.db.operation.DBOperation;
 import com.maishare.themis.component.base.domain.CompareItem;
 import com.maishare.themis.component.base.domain.CompareOperator;
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * BD操作处理器模板
@@ -22,7 +21,6 @@ import com.maishare.themis.component.base.domain.CompareOperator;
 public abstract class AbstractDBOperationProcessor<T extends DBOperation, R> implements DBOperationProcessor<T, R> {
 
     public Pair<String, List<Object>> getConditionStrAndParam(Map<String, CompareItem> conditions) {
-        Pair<String, List<Object>> result = new Pair<>();
         StringBuilder sb = new StringBuilder();
         List<Object> params = new ArrayList<>();
 
@@ -53,10 +51,7 @@ public abstract class AbstractDBOperationProcessor<T extends DBOperation, R> imp
             }
         });
 
-        result.setFirst(sb.toString());
-        result.setSecond(params);
-
-        return result;
+        return Pair.of(sb.toString(), params);
     }
 
     public Object getConditionValue(CompareItem item){

@@ -4,6 +4,7 @@
  */
 package com.maishare.test.defaults;
 
+
 import org.bravo.gaia.commons.money.MultiCurrencyMoney;
 
 /**

@@ -5,7 +5,7 @@
 package com.maishare.test.spring.service;
 
 import com.maishare.test.spring.domain.UserInfo;
-import org.bravo.gaia.commons.domain.BaseResult;
+import com.oppo.gaia.commons.domain.BaseResult;
 
 import java.util.List;
 

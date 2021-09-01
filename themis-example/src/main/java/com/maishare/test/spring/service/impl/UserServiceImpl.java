@@ -7,8 +7,7 @@ package com.maishare.test.spring.service.impl;
 import com.maishare.test.spring.domain.UserInfo;
 import com.maishare.test.spring.service.AddressService;
 import com.maishare.test.spring.service.UserService;
-import org.bravo.gaia.commons.domain.BaseResult;
-import org.bravo.gaia.log.annotation.NeedLog;
+import com.oppo.gaia.commons.domain.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +24,6 @@ public class UserServiceImpl implements UserService {
 	private AddressService addressService;
 	
 	@Override
-	@NeedLog(sceneCode="用户通知测试")
 	public String notify(List<String> userNames, String age) {
 		
 		System.out.println("userName="+userNames+", age="+age);
@@ -35,7 +33,6 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	@NeedLog(sceneCode="设置密码")
 	public void resetPassword(String userName, String password) {
 		System.out.println("userName="+userName+",password="+password);
 	}

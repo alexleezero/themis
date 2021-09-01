@@ -4,6 +4,7 @@
  */
 package com.maishare.test.defaults;
 
+
 import org.bravo.gaia.commons.money.MultiCurrencyMoney;
 
 /**
@@ -19,10 +20,9 @@ public class MyServiceImpl implements MyService {
     @Override
     public long pay(String fromUserNo, String toUserNo) {
         MultiCurrencyMoney money = myMockService.getMoney();
-        System.out.println(String.format("[%s]转账[%s]给[%s]", fromUserNo, money.getAmount().toString(), toUserNo));
+        System.out.printf("[%s]转账[%d]给[%s]%n", fromUserNo, money.getCent(), toUserNo);
     
         messageService.send("13568861795");
-        
         return money.getCent();
     }
 }

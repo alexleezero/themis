@@ -19,8 +19,8 @@ package com.maishare.themis.extension.utils;
 import com.alibaba.fastjson.JSON;
 import com.maishare.themis.extension.constants.CommonConstants;
 import com.maishare.themis.extension.io.UnsafeStringWriter;
-import org.bravo.gaia.log.logger.Logger;
-import org.bravo.gaia.log.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;

@@ -4,6 +4,7 @@
  */
 package com.maishare.test.defaults;
 
+
 import org.bravo.gaia.commons.money.MultiCurrencyMoney;
 
 /**
@@ -13,7 +14,7 @@ import org.bravo.gaia.commons.money.MultiCurrencyMoney;
 public class MyMockServiceImpl implements MyMockService {
     @Override
     public MultiCurrencyMoney getMoney() {
-        return new MultiCurrencyMoney("88.88");
+        return new MultiCurrencyMoney(8888, 156);
     }
 }
 

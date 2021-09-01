@@ -3,8 +3,8 @@ package com.maishare.themis.component.utils;
 import com.maishare.themis.component.base.checker.AssertMatcher;
 import com.maishare.themis.component.base.checker.MatcherContext;
 import org.apache.commons.lang3.CharUtils;
-import org.bravo.gaia.log.logger.Logger;
-import org.bravo.gaia.log.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static java.lang.String.format;
 

@@ -16,9 +16,9 @@
  */
 package com.maishare.themis.extension.utils;
 
-import org.bravo.gaia.log.logger.Logger;
-import org.bravo.gaia.log.logger.LoggerFactory;
 import com.maishare.themis.extension.constants.CommonConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.Inet4Address;
@@ -220,7 +220,7 @@ public class NetUtils {
                 return addressOp.get();
             }
         } catch (Throwable e) {
-            logger.warn(e);
+            logger.warn(e.getMessage());
         }
 
         try {
@@ -248,15 +248,15 @@ public class NetUtils {
                                 }
                             }
                         } catch (Throwable e) {
-                            logger.warn(e);
+                            logger.warn(e.getMessage());
                         }
                     }
                 } catch (Throwable e) {
-                    logger.warn(e);
+                    logger.warn(e.getMessage());
                 }
             }
         } catch (Throwable e) {
-            logger.warn(e);
+            logger.warn(e.getMessage());
         }
         return localAddress;
     }

@@ -10,7 +10,7 @@ import com.maishare.themis.component.base.db.operation.DBDeleteOperation;
 import com.maishare.themis.component.base.db.operation.DBOperationType;
 import com.maishare.themis.component.base.db.operation.OperationType;
 import org.apache.commons.collections.MapUtils;
-import org.bravo.gaia.commons.domain.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;
 
@@ -37,11 +37,11 @@ public class DBDeleteOperationProcessor extends AbstractDBOperationProcessor<DBD
         StringBuilder sb = new StringBuilder("delete from ");
         sb.append(operation.getTableName());
         sb.append(" where ");
-        sb.append(conditionStrAndParam.getFirst());
+        sb.append(conditionStrAndParam.getLeft());
 
         return SqlExecutor.getInstance(
                 operation.getThemisTestExecution().getThemisContext().getThemisConfig().getDataSource())
-                .update(sb.toString(), conditionStrAndParam.getSecond().toArray());
+                .update(sb.toString(), conditionStrAndParam.getRight().toArray());
     }
 
 }

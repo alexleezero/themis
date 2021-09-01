@@ -11,7 +11,7 @@ import com.maishare.themis.component.base.db.operation.DBSelectOperation;
 import com.maishare.themis.component.base.db.operation.OperationType;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.MapUtils;
-import org.bravo.gaia.commons.domain.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.HashSet;
 import java.util.List;
@@ -59,11 +59,11 @@ public class DBSelectOperationProcessor extends AbstractDBOperationProcessor<DBS
         sb.append(" where ");
 
         Pair<String, List<Object>> conditionStrAndParam = getConditionStrAndParam(operation.getConditions());
-        sb.append(conditionStrAndParam.getFirst());
+        sb.append(conditionStrAndParam.getLeft());
 
         return SqlExecutor.getInstance(
                 operation.getThemisTestExecution().getThemisContext().getThemisConfig().getDataSource())
-                .queryForListMap(sb.toString(), conditionStrAndParam.getSecond().toArray());
+                .queryForListMap(sb.toString(), conditionStrAndParam.getRight().toArray());
     }
 }
 

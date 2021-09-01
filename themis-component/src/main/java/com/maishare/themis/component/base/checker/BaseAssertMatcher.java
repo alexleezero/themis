@@ -2,9 +2,9 @@ package com.maishare.themis.component.base.checker;
 
 import com.maishare.themis.component.base.convert.TypeConverterExecutor;
 import com.maishare.themis.component.base.domain.CompareOperator;
-import org.bravo.gaia.log.logger.Logger;
-import org.bravo.gaia.log.logger.LoggerFactory;
 import org.junit.jupiter.api.Assertions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class BaseAssertMatcher implements AssertMatcher {
 

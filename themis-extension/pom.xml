@@ -5,7 +5,7 @@
     <parent>
         <artifactId>themis</artifactId>
         <groupId>com.maishare</groupId>
-        <version>1.0-RELEASE</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,16 +22,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.bravo</groupId>
-            <artifactId>gaia-log</artifactId>
-            <version>${gaia-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.bravo</groupId>
-            <artifactId>gaia-utils</artifactId>
-            <version>${gaia-version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson-version}</version>
@@ -40,6 +30,11 @@
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>3.26.0-GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.4.RELEASE</version>
         </dependency>
     </dependencies>
 

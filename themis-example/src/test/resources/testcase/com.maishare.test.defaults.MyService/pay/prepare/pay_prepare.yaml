@@ -2,3 +2,10 @@ index: 1
 data:
   fromUserNo: zhangsan
   toUserNo: lisi
+
+---
+
+index: 2
+data:
+  fromUserNo: zhangsan2
+  toUserNo: lisi2
