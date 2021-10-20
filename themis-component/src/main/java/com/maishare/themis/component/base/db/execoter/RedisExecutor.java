@@ -4,14 +4,12 @@
  */
 package com.maishare.themis.component.base.db.execoter;
 
+import com.maishare.themis.common.exception.ComponentException;
+import lombok.Getter;
 import org.springframework.data.redis.connection.RedisConfiguration;
-import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-
-import com.maishare.themis.common.exception.ComponentException;
-
-import lombok.Getter;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * Redis 执行器
@@ -26,12 +24,14 @@ public class RedisExecutor {
     private static RedisExecutor          redisExecutor;
 
     private RedisExecutor(RedisConfiguration configuration){
-        LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory((RedisStandaloneConfiguration)configuration);
+        LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(configuration);
         lettuceConnectionFactory.afterPropertiesSet();
 
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(lettuceConnectionFactory);
         redisTemplate.afterPropertiesSet();
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
 
         this.redisTemplate = redisTemplate;
     }
