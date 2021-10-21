@@ -18,12 +18,14 @@ import com.maishare.themis.component.enums.MockParamType;
 import com.maishare.themis.component.param.CommonIndexCompParam;
 import com.maishare.themis.component.utils.MethodResolverUtils;
 import com.maishare.themis.component.utils.MockDataValid;
+import com.maishare.themis.component.utils.ThemisAopUtils;
 import com.maishare.themis.context.ThemisContext;
 import com.maishare.themis.context.execution.ThemisTestExecution;
 import com.maishare.themis.extension.utils.ReflectUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
@@ -61,12 +63,12 @@ public abstract class AbstractMockComp extends MockComponent<CommonIndexCompPara
     protected void doProcessInjectMock(List<MockContext> mockContexts,ThemisTestExecution themisTestExecution) {
         for (MockContext mockContext : mockContexts) {
             Object hostBean = getHostBean(mockContexts, mockContext.getHostBean());
-
+            if (AopUtils.isAopProxy(hostBean)) {
+                hostBean = ThemisAopUtils.getUltimateTargetObject(hostBean);
+            }
             Field field = ReflectUtils.findField(hostBean.getClass(), f -> f.getType().isAssignableFrom(mockContext.getTargetObject().getClass()));
-
             assert field != null;
             field.setAccessible(true);
-
             ReflectionUtils.setField(field, hostBean, mockContext.getProxyObject());
         }
     }
