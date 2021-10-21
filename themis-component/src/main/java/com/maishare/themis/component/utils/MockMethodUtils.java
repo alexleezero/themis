@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
  */
 public final class MockMethodUtils {
     public static boolean clazzMatch(InvocationOnMock invocation, MockMethod defData){
-	    // clazz类型匹配
 		return invocation.getClass().equals(defData.getTargetBean().getClass()) ||
 			AopUtils.getTargetClass(defData.getTargetBean()).isAssignableFrom(invocation.getMock().getClass());
     }

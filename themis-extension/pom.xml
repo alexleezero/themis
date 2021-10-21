@@ -12,19 +12,14 @@
     <artifactId>themis-extension</artifactId>
 
     <description>
-        themis SPI扩展、能力来自于dubbo中的extension
+        define themis SPI extension
     </description>
-
-    <properties>
-        <gaia-version>1.0.1-RELEASE</gaia-version>
-        <fastjson-version>1.2.62</fastjson-version>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fastjson-version}</version>
+            <version>${fastjson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.javassist</groupId>
@@ -34,7 +29,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>5.2.4.RELEASE</version>
         </dependency>
     </dependencies>
 

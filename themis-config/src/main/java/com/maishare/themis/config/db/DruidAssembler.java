@@ -1,42 +1,34 @@
 package com.maishare.themis.config.db;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-
-import org.springframework.util.StringUtils;
-
 import com.alibaba.druid.filter.Filter;
 import com.alibaba.druid.filter.logging.Slf4jLogFilter;
 import com.alibaba.druid.filter.stat.MergeStatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
 /**
- * druid 属性装备器
+ * druid assembler
  * @author lijian
  *
  */
 public class DruidAssembler {
-	
-	private static final int DEFAULT_INITIAL_SIZE = 1;
-	private static final int DEFAULT_MIN_IDLE = 1;
-	private static final int DEFAULT_MAX_ACTIVE = 100;
-	private static final int DEFAULT_MAX_WAIT = 60000;
-	private static final int DEFAULT_TIME_BETWEEN_EVICTION_RUNS_MILLIS = 60000;
-	private static final int DEFAULT_MIN_EVICTABLE_IDLE_TIME_MILLIS = 300000;
+	private static final String DEFAULT_INITIAL_SIZE = "1";
+	private static final String DEFAULT_MIN_IDLE = "1";
+	private static final String DEFAULT_MAX_ACTIVE = "100";
+	private static final String DEFAULT_MAX_WAIT = "60000";
+	private static final String DEFAULT_TIME_BETWEEN_EVICTION_RUNS_MILLIS = "60000";
+	private static final String DEFAULT_MIN_EVICTABLE_IDLE_TIME_MILLIS = "300000";
 	private static final String DEFAULT_VALIDATION_QUERY = "SELECT 'x'";
-	private static final boolean DEFAULT_TEST_WHILE_IDLE = true;
-	private static final boolean DEFAULT_TEST_ON_BORROW = false;
-	private static final boolean DEFAULT_TEST_ON_RETURN = false;
-	private static final boolean DEFAULT_POOL_PREPARED_STATEMENTS = false;
-	private static final int DEFAULT_MAXPOOLPREPAREDSTATEMENTPERCONNECTIONSIZE = 20;
-	
-	private static final boolean DEFAULT_REMOVEABANDONED=true;
-	private static final int DEFAULT_REMOVEABANDONEDTIMEOUT=1800;
-	
-	
-	
-	
+	private static final String DEFAULT_TEST_WHILE_IDLE = "true";
+	private static final String DEFAULT_TEST_ON_BORROW = "false";
+	private static final String DEFAULT_TEST_ON_RETURN = "false";
+	private static final String DEFAULT_POOL_PREPARED_STATEMENTS = "false";
+	private static final String DEFAULT_MAX_POOL_PREPARED_STATEMENT_PER_CONNECTION_SIZE = "20";
+	private static final String DEFAULT_REMOVE_ABANDONED = "true";
+	private static final String DEFAULT_REMOVE_ABANDONED_TIMEOUT = "1800";
 	private static final String INITIAL_SIZE = "initialSize";
 	private static final String MIN_IDLE = "minIdle";
 	private static final String MAX_ACTIVE = "maxActive";
@@ -48,71 +40,40 @@ public class DruidAssembler {
 	private static final String TEST_ON_BORROW = "testOnBorrow";
 	private static final String TEST_ON_RETURN = "testOnReturn";
 	private static final String POOL_PREPARED_STATEMENTS = "poolPreparedStatements";
-	private static final String MAXPOOLPREPAREDSTATEMENTPERCONNECTIONSIZE = "maxPoolPreparedStatementPerConnectionSize";
+	private static final String MAX_POOL_PREPARED_STATEMENT_PER_CONNECTION_SIZE = "maxPoolPreparedStatementPerConnectionSize";
+	private static final String REMOVE_ABANDONED ="removeAbandoned";
+	private static final String REMOVE_ABANDONED_TIMEOUT ="removeAbandonedTimeout";
+	private static final int DEFAULT_SLOW_SQL_MLS = 6000;
+	private static final int DEFAULT_SCHEDULE_FLUSH_LOG_MLS = 300000;
 	
-	private static final String REMOVEABANDONED="removeAbandoned";
-	private static final String REMOVEABANDONEDTIMEOUT="removeAbandonedTimeout";
 	
-	
-	private Properties props;
+	private final Properties props;
 	
 	public DruidAssembler(Properties props){
 		this.props = props;
 	}
 	
 	public void assembleDruid(DruidDataSource dataSource) {
-		int initialSize = 
-				StringUtils.isEmpty(props.getProperty(INITIAL_SIZE)) ? 
-						DEFAULT_INITIAL_SIZE : Integer.valueOf(props.getProperty(INITIAL_SIZE));
-		int minIdle = 
-				StringUtils.isEmpty(props.getProperty(MIN_IDLE)) ? 
-						DEFAULT_MIN_IDLE : Integer.valueOf(props.getProperty(MIN_IDLE));
-		int maxActive = 
-				StringUtils.isEmpty(props.getProperty(MAX_ACTIVE)) ? 
-						DEFAULT_MAX_ACTIVE : Integer.valueOf(props.getProperty(MAX_ACTIVE));
-		int maxWait = 
-				StringUtils.isEmpty(props.getProperty(MAX_WAIT)) ? 
-						DEFAULT_MAX_WAIT : Integer.valueOf(props.getProperty(MAX_WAIT));
-		int timeBetweenEvictionRunsMillis = 
-				StringUtils.isEmpty(props.getProperty(TIME_BETWEEN_EVICTION_RUNS_MILLIS)) ? 
-						DEFAULT_TIME_BETWEEN_EVICTION_RUNS_MILLIS : Integer.valueOf(props.getProperty(TIME_BETWEEN_EVICTION_RUNS_MILLIS));
-		int minEvictableIdleTimeMillis = 
-				StringUtils.isEmpty(props.getProperty(MIN_EVICTABLE_IDLE_TIME_MILLIS)) ? 
-						DEFAULT_MIN_EVICTABLE_IDLE_TIME_MILLIS : Integer.valueOf(props.getProperty(MIN_EVICTABLE_IDLE_TIME_MILLIS));
-		String validationQuery = 
-				StringUtils.isEmpty(props.getProperty(VALIDATION_QUERY)) ? 
-						DEFAULT_VALIDATION_QUERY : props.getProperty(VALIDATION_QUERY);
-		boolean testWhileIdle = 
-				StringUtils.isEmpty(props.getProperty(TEST_WHILE_IDLE)) ? 
-						DEFAULT_TEST_WHILE_IDLE : Boolean.valueOf(props.getProperty(TEST_WHILE_IDLE));
-		boolean testOnBorrow = 
-				StringUtils.isEmpty(props.getProperty(TEST_ON_BORROW)) ? 
-						DEFAULT_TEST_ON_BORROW : Boolean.valueOf(props.getProperty(TEST_ON_BORROW));
-		boolean testOnReturn = 
-				StringUtils.isEmpty(props.getProperty(TEST_ON_RETURN)) ? 
-						DEFAULT_TEST_ON_RETURN : Boolean.valueOf(props.getProperty(TEST_ON_RETURN));
-		boolean poolPreparedStatements = 
-				StringUtils.isEmpty(props.getProperty(POOL_PREPARED_STATEMENTS)) ? 
-						DEFAULT_POOL_PREPARED_STATEMENTS : Boolean.valueOf(props.getProperty(POOL_PREPARED_STATEMENTS));
-		int maxPoolPreparedStatementPerConnectionSize = 
-				StringUtils.isEmpty(props.getProperty(MAXPOOLPREPAREDSTATEMENTPERCONNECTIONSIZE)) ? 
-						DEFAULT_MAXPOOLPREPAREDSTATEMENTPERCONNECTIONSIZE : Integer.valueOf(props.getProperty(MAXPOOLPREPAREDSTATEMENTPERCONNECTIONSIZE));
-		
-		
-		boolean removeAbandoned = StringUtils.isEmpty(props.getProperty(REMOVEABANDONED)) ? 
-				DEFAULT_REMOVEABANDONED : Boolean.valueOf(props.getProperty(REMOVEABANDONED));
-		
-		
-		int removeAbandonedTimeout = StringUtils.isEmpty(props.getProperty(REMOVEABANDONEDTIMEOUT)) ? 
-				DEFAULT_REMOVEABANDONEDTIMEOUT : Integer.valueOf(props.getProperty(REMOVEABANDONEDTIMEOUT));
-		
-		
+		int initialSize = Integer.parseInt(props.getProperty(INITIAL_SIZE, DEFAULT_INITIAL_SIZE));
+		int minIdle = Integer.parseInt(props.getProperty(MIN_IDLE, DEFAULT_MIN_IDLE));
+		int maxActive = Integer.parseInt(props.getProperty(MAX_ACTIVE, DEFAULT_MAX_ACTIVE));
+		int maxWait = Integer.parseInt(props.getProperty(MAX_WAIT, DEFAULT_MAX_WAIT));
+		int timeBetweenEvictionRunsMillis = Integer.parseInt(props.getProperty(TIME_BETWEEN_EVICTION_RUNS_MILLIS, DEFAULT_TIME_BETWEEN_EVICTION_RUNS_MILLIS));
+		int minEvictableIdleTimeMillis = Integer.parseInt(props.getProperty(MIN_EVICTABLE_IDLE_TIME_MILLIS, DEFAULT_MIN_EVICTABLE_IDLE_TIME_MILLIS));
+		String validationQuery = props.getProperty(VALIDATION_QUERY, DEFAULT_VALIDATION_QUERY);
+		boolean testWhileIdle = Boolean.parseBoolean(props.getProperty(TEST_WHILE_IDLE, DEFAULT_TEST_WHILE_IDLE));
+		boolean testOnBorrow = Boolean.parseBoolean(props.getProperty(TEST_ON_BORROW, DEFAULT_TEST_ON_BORROW));
+		boolean testOnReturn = Boolean.parseBoolean(props.getProperty(TEST_ON_RETURN, DEFAULT_TEST_ON_RETURN));
+		boolean poolPreparedStatements = Boolean.parseBoolean(props.getProperty(POOL_PREPARED_STATEMENTS, DEFAULT_POOL_PREPARED_STATEMENTS));
+		int maxPoolPreparedStatementPerConnectionSize = Integer.parseInt(
+				props.getProperty(MAX_POOL_PREPARED_STATEMENT_PER_CONNECTION_SIZE,
+						DEFAULT_MAX_POOL_PREPARED_STATEMENT_PER_CONNECTION_SIZE));
+		boolean removeAbandoned = Boolean.parseBoolean(props.getProperty(REMOVE_ABANDONED, DEFAULT_REMOVE_ABANDONED));
+		int removeAbandonedTimeout = Integer.parseInt(props.getProperty(REMOVE_ABANDONED_TIMEOUT, DEFAULT_REMOVE_ABANDONED_TIMEOUT));
+
 		dataSource.setRemoveAbandoned(removeAbandoned);
 		dataSource.setRemoveAbandonedTimeout(removeAbandonedTimeout);
-		
 		dataSource.setInitialSize(initialSize);
-		
-		
 		dataSource.setMinIdle(minIdle);
 		dataSource.setMaxActive(maxActive);
 		dataSource.setMaxWait(maxWait);
@@ -124,19 +85,19 @@ public class DruidAssembler {
 		dataSource.setTestOnReturn(testOnReturn);
 		dataSource.setPoolPreparedStatements(poolPreparedStatements);
 		dataSource.setMaxPoolPreparedStatementPerConnectionSize(maxPoolPreparedStatementPerConnectionSize);
-		//配置druid filter
+		//config druid filter
 		Slf4jLogFilter logFilter = new Slf4jLogFilter();
 		MergeStatFilter  statFilter = new MergeStatFilter();
-		//记录慢sql
-		statFilter.setSlowSqlMillis(10000);
+		//record slow sql
+		statFilter.setSlowSqlMillis(DEFAULT_SLOW_SQL_MLS);
 		statFilter.setLogSlowSql(true);
 		logFilter.setStatementExecutableSqlLogEnable(true);
 		List<Filter> filters = new ArrayList<>();
 		filters.add(logFilter);
 		filters.add(statFilter);
 		dataSource.setProxyFilters(filters);
-		//定时5分钟将监控数据输出到日志文件中
-		dataSource.setTimeBetweenLogStatsMillis(300000);
+		//schedule flush the stat to log every 30s
+		dataSource.setTimeBetweenLogStatsMillis(DEFAULT_SCHEDULE_FLUSH_LOG_MLS);
 	}
 	
 	

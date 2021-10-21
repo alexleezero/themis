@@ -4,7 +4,7 @@ import com.maishare.themis.common.exception.AssertMatcherException;
 import com.maishare.themis.common.exception.ComponentException;
 import com.maishare.themis.component.base.checker.MatcherContext;
 import com.maishare.themis.component.base.domain.CompareOperator;
-import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
 import java.util.List;

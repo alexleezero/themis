@@ -4,6 +4,17 @@
  */
 package com.maishare.themis.component.base.db.factory;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import com.maishare.themis.common.constants.LibraCompDBDataKeys;
+import com.maishare.themis.common.enums.FileType;
+import com.maishare.themis.component.base.db.operation.DBOperationType;
+import com.maishare.themis.component.base.domain.CompareItem;
+import com.maishare.themis.component.base.domain.CompareOperator;
+import com.maishare.themis.component.utils.ExpressionExecutor;
+import com.maishare.themis.context.execution.ThemisTestExecution;
+import org.apache.commons.lang3.tuple.Pair;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,18 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.assertj.core.util.Sets;
-
-import com.google.common.collect.Lists;
-import com.maishare.themis.common.constants.LibraCompDBDataKeys;
-import com.maishare.themis.common.enums.FileType;
-import com.maishare.themis.component.base.db.operation.DBOperationType;
-import com.maishare.themis.component.base.domain.CompareItem;
-import com.maishare.themis.component.base.domain.CompareOperator;
-import com.maishare.themis.component.utils.ExpressionExecutor;
-import com.maishare.themis.context.execution.ThemisTestExecution;
 
 /**
  * DB操作工厂Yaml模板

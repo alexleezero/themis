@@ -59,7 +59,9 @@ public class MockitoMockProcessor implements MockProcessor {
     public void resetMock(List<MockMethod> mockMethods, ThemisContext themisContext) {
         for (MockMethod mockMethod : mockMethods) {
             Object hostBean = mockMethod.getHostBean();
-
+            if (AopUtils.isAopProxy(hostBean)) {
+                hostBean = ThemisAopUtils.getUltimateTargetObject(hostBean);
+            }
             Field field = ReflectUtils.findField(hostBean.getClass(), f -> f.getType().isAssignableFrom(mockMethod.getTargetBean().getClass()));
 
             Object targetBean = mockMethod.getTargetBean();

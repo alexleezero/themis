@@ -101,7 +101,7 @@ public abstract class AbstractMockComp extends MockComponent<CommonIndexCompPara
 
             ThemisContext context = themisTestExecution.getThemisContext();
             Object bean = context.getBean(beanName);
-            if(null==prepareMockData.getHostBean()){
+            if(null == prepareMockData.getHostBean()){
                 throw new ComponentException("mock "+bean.getClass().getName()+" object not config hostBean");
             }
             Object hostBean = context.getBean(prepareMockData.getHostBean());

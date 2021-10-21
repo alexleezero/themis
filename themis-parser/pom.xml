@@ -12,24 +12,25 @@
     <artifactId>themis-parser</artifactId>
 
     <description>
-        解析libra语法文件
+        1. define libra grammar
+        2. define libra file parser
     </description>
 
     <properties>
-        <antlr-version>4.8</antlr-version>
-        <snake-yaml-version>1.26</snake-yaml-version>
+        <antlr.version>4.8</antlr.version>
+        <snake.yaml.version>1.26</snake.yaml.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>${snake-yaml-version}</version>
+            <version>${snake.yaml.version}</version>
         </dependency>
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4</artifactId>
-            <version>${antlr-version}</version>
+            <version>${antlr.version}</version>
         </dependency>
         <dependency>
             <groupId>com.maishare</groupId>
